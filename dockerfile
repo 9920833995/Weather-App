@@ -7,5 +7,8 @@ WORKDIR /usr/local/apache2/htdocs/
 #removing the current html file
 RUN rm -rf index.html
 
+#health check of container
+HEALTHCHECK CMD curl --fail http://localhost:80 || exit 1
+
 #transfering our data in docker env
 COPY . .
