@@ -1,6 +1,10 @@
 #select base images for hosting
 FROM httpd:2.4
 
+#adding user as per best practice
+RUN useradd -m appuser
+USER appuser
+
 #selecting current working directory
 WORKDIR /usr/local/apache2/htdocs/
 
