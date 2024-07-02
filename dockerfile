@@ -1,10 +1,6 @@
 #select base images for hosting
 FROM httpd:2.4
 
-#adding user
-RUN useradd -m appuser
-USER appuser
-
 #adding health check
 HEALTHCHECK CMD curl --fail http://localhost:80 || exit 1
 
